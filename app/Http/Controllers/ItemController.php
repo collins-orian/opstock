@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use Illuminate\Validation\ValidationException;
 
-class InventoryController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display the dashboard with the list of items.
@@ -16,8 +16,10 @@ class InventoryController extends Controller
     {
         // Fetch all items from the database to display on the dashboard
         $items = Item::all();
+        $creator = Item::with('creator')->get(); // Eager load the 'creator' relation to avoid N+1 query issue
+
         // Pass the items to the view
-        return view('dashboard', ['items' => $items]);
+        return view('dashboard', ['items' => $items, 'creator' => $creator]);
     }
 
     /**

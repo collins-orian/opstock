@@ -18,6 +18,7 @@ class Item extends Model
     protected $fillable = ['name', 'quantity', 'created_by'];
 
     /**
+     * Creat a new Item
      * @param array $data
      * @return Model
      * @throws ValidationException
@@ -43,7 +44,6 @@ class Item extends Model
      * @return Model
      * @throws ValidationException
      */
-
     public static function createItem(string $name, int $quantity): Model
     {
         return self::create([
@@ -64,6 +64,14 @@ class Item extends Model
     {
         // Use Laravel built-in findOrFail method to retrieve the item
         return Item::query()->findOrFail($id);
+    }
+
+    /**
+     * Get the user who created the item.
+     */
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
     }
 
 }

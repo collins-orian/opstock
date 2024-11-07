@@ -12,9 +12,27 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+
+                    <!-- Dashboard link-->
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <!-- Stock In Link -->
+                    <x-nav-link :href="route('stock.in')" :active="request()->routeIs('stock.in')">
+                        {{ __('Stock In') }}
+                    </x-nav-link>
+
+                    <!-- Stock Out Link -->
+                    <x-nav-link :href="route('stock.out')" :active="request()->routeIs('stock.out')">
+                        {{ __('Stock Out') }}
+                    </x-nav-link>
+
+                    <!-- Reagents Link -->
+                    <x-nav-link :href="route('reagents.index')" :active="request()->routeIs('reagents')">
+                        {{ __('Reagents') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 

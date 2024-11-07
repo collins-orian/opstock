@@ -19,6 +19,7 @@
                             <tr>
                                 <th class="py-2 px-4 border-b">Item Name</th>
                                 <th class="py-2 px-4 border-b">Quantity</th>
+                                <th class="py-2 px-4 border-b">Registered By</th>
                                 <th class="py-2 px-4 border-b">Created At</th>
                                 <th class="py-2 px-4 border-b">Updated At</th>
                                 <th class="py-2 px-4 border-b">Action</th>
@@ -29,6 +30,7 @@
                                 <tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-800">
                                     <td class="py-2 px-4">{{ $item->name }}</td>
                                     <td class="py-2 px-4">{{ $item->quantity }}</td>
+                                    <td class="py-2 px-4">{{ $item->creator ? $item->creator->name : 'N/A' }}</td>
                                     <td class="py-2 px-4">
                                         {{ $item->created_at->format('d, F Y - H:i') }}
                                     </td>
