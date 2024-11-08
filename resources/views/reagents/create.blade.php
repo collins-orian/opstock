@@ -11,19 +11,32 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
                     <!-- Display Reagents -->
-                    <div>
-                        <form action="{{ route('reagents.add') }}" method="POST">
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+                        <form action="{{ route('reagents.add') }}" method="POST" class="space-y-4">
                             @csrf
-                            <label class="font-semibold py-4 px-4 border-b" for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
 
-                            <label class="font-semibold py-4 px-4 border-b" for="quantity">Quantity</label>
-                            <input type="number" id="quantity" name="quantity" required>
+                            <div>
+                                <label class="block font-semibold text-gray-700 dark:text-gray-200 mt-6" for="name">Name</label>
+                                <input type="text" id="name" name="name" required
+                                       class="w-full p-2 border border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
 
-                            <label class="font-semibold py-4 px-4 border-b" for="expiry_date">Expiry Date</label>
-                            <input type="date" id="expiry_date" name="expiry_date" required>
+                            <div>
+                                <label class="block font-semibold text-gray-700 dark:text-gray-200 mt-6" for="quantity">Quantity</label>
+                                <input type="number" id="quantity" name="quantity" required
+                                       class="w-full p-2 border border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
 
-                            <button class="font-semibold text-md mb-2 py-4 px-4" type="submit">Add Reagent</button>
+                            <div>
+                                <label class="block font-semibold text-gray-700 dark:text-gray-200 mt-6" for="expiry_date">Expiry Date</label>
+                                <input type="date" id="expiry_date" name="expiry_date" required
+                                       class="w-full p-2 border border-gray-300 rounded-md dark:border-gray-600 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+
+                            <button type="submit"
+                                    class="w-full py-2 mt-6 bg-blue-600 text-black font-semibold rounded-md hover:bg-blue-700 transition duration-200">
+                                Add Reagent
+                            </button>
                         </form>
                     </div>
                 </div>
